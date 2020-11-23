@@ -1,0 +1,27 @@
+from python_practice.game.python_game import Game
+
+class Houyi(Game):
+    # 子类的init构造方法覆盖了父类的构造方法
+    def __init__(self,houyi_hp,your_hp,defense):
+        super().__init__(my_hp = houyi_hp,your_hp = your_hp)
+        self.defense = defense
+    def fight(self):
+        round_num = 0
+        while self.my_hp > 0 and self.your_hp > 0:
+            round_num = round_num + 1
+            print(round_num)
+            self.your_hp = self.your_hp - self.my_power
+            if self.your_hp <= 0:
+                print("Houyi win!")
+                print(f'Your hp is {self.your_hp}')
+                print(f'houyi hp is {self.my_hp}')
+                break
+            self.my_hp = self.my_hp + self.defense - self.your_power
+            if self.my_hp <= 0:
+                print("You win!")
+                print(f'Your hp is {self.your_hp}')
+                print(f'houyi hp is {self.my_hp}')
+                break
+
+houyi = Houyi(2000,1000,100)
+houyi.fight()

@@ -8,7 +8,7 @@ def fight():
     my_hp = 1000
     my_power = 200
     your_hp =1000
-    your_power = 199
+    your_power = 200
 
     my_finial_hp = my_hp - your_power
     your_finial_hp = your_hp - my_power
@@ -19,5 +19,6 @@ def fight():
         print("You win!")
     else:
         print("Ping!")
+        raise Exception("No peace!")
 
 fight()

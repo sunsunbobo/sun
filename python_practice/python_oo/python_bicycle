@@ -1,0 +1,25 @@
+class Bicycle:
+    def run(self,km):
+        print(f'用脚骑了{km}km')
+
+class Ebicycle(Bicycle):
+    def __init__(self,valume):
+        self.valume = valume
+    def fill_charge(self,vol):
+        print(f"电动车已充电{vol}度, 充完电还有{vol+self.valume}度")
+    def run(self, km):
+        #用电池能骑行的最大公里数
+        e_km = self.valume*10
+        if km - e_km <= 0:
+            print(f"用电一共骑了{km}")
+        else:
+            print(f"用电一共骑了{e_km}")
+            # 当子类中有和父类崇明的方法或属性，那么首先选择的是子类的
+            super().run(km-e_km)
+            # print(f"用脚骑了{km-e_km}km")
+
+
+eb = Ebicycle(100)
+eb.fill_charge(30)
+eb.run(10000)
+

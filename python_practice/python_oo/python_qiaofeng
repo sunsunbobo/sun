@@ -1,0 +1,12 @@
+class Qiaofeng:
+    height = 180
+    weight = 200
+
+    def fight_xlsbz(self):
+        print("xlsbz")
+    def video(self):
+        print("video")
+
+a = Qiaofeng()
+print(a.height)
+a.video()
