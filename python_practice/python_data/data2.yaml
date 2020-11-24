@@ -1,0 +1,10 @@
+
+person:
+  -
+    name: "ming"
+    age: 16
+    habbit: "eat"
+  -
+    name: "hong"
+    age: 18
+    habbit: "sleep"
